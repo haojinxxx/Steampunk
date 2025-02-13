@@ -6,8 +6,9 @@ public class PlayerPickUpDrop : MonoBehaviour
 {
 
     [SerializeField] private Transform playerCameraTransform;
+    [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
-
+    private ObjectGrabbable objectGrabbable;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,22 @@ public class PlayerPickUpDrop : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            float pickUpDistance = 2f;
-            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance))
+            if (objectGrabbable == null)
             {
-                if (raycastHit.transform.TryGetComponent(out ObjectGrabbable objectGrabbable))
+                float pickUpDistance = 2f;
+                if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance))
                 {
-                    Debug.Log(objectGrabbable);
+                    if (raycastHit.transform.TryGetComponent(out objectGrabbable))
+                    {
+                        objectGrabbable.Grab(objectGrabPointTransform);
+                        Debug.Log(objectGrabbable);
+                    }
                 }
+            } 
+            else
+            {
+                objectGrabbable.Drop();
+                objectGrabbable = null;
             }
         }
     }
