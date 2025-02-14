@@ -40,6 +40,8 @@ public class HeadBobController : MonoBehaviour
     private void CheckMotion() {
         float speed = new Vector3(_controller.velocity.x, 0, _controller.velocity.z).magnitude;
 
+        ResetPosition();
+
         if (speed < _toggleSpeed) return;
         if (!_controller.isGrounded) return;
 
