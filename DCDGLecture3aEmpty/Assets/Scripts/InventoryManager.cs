@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject[] hotbarSlots = new GameObject[3];
     [SerializeField] GameObject inventoryParent;
     [SerializeField] GameObject itemPrefab;
+    [SerializeField] private float throwForce;
     [SerializeField] Camera cam;
 
     int selectedHotbarSlot = 0;
@@ -58,7 +59,6 @@ public class InventoryManager : MonoBehaviour
         droppedItem.GetComponent<itemPickable>().itemScriptableObject = itemSO;
 
         Vector3 throwDirection = cam.transform.forward + new Vector3(0,0.2f, 0);
-        float throwForce = 5f;
 
         droppedItem.GetComponent<Rigidbody>().AddForce(throwDirection * throwForce, ForceMode.Impulse);
 
