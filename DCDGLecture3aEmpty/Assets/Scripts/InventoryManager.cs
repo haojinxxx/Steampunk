@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject[] hotbarSlots = new GameObject[3];
     [SerializeField] GameObject inventoryParent;
     [SerializeField] GameObject itemPrefab;
+    [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private Text promptText;
     [SerializeField] private float throwForce;
     [SerializeField] Camera cam;
 
@@ -18,12 +20,60 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         HotbarItemChanged();
+        interactPrompt.SetActive(false);
     }
 
     void Update()
     {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+
+        if (Physics.Raycast(ray, out hitInfo, 2) && hitInfo.collider.gameObject.GetComponent<itemPickable>() != null)
+        {
+            itemPickable item = hitInfo.collider.gameObject.GetComponent<itemPickable>();
+            DisplayInputPrompt("Press [E] to Pick Up");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ItemPicked(hitInfo.collider.gameObject);
+            }
+        }
+        else if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hitInfo, 2, LayerMask.GetMask("Placable")))
+        {
+            CheckForPlaceInput(hitInfo);
+        }
+        else
+        {
+            interactPrompt.SetActive(false);
+        }
+
         CheckForHotbarInput();
 
+    }
+
+    private void CheckForPlaceInput(RaycastHit hitInfo)
+    {
+        DisplayInputPrompt("Press [E] to Place Item");
+        if (Input.GetKeyDown(KeyCode.E) && hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem != null)
+        {
+            PlaceItem(hitInfo, hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem.GetComponent<InventoryItem>().itemScriptableObject);
+        }
+    }
+
+    private void PlaceItem(RaycastHit hitInfo, ItemSO itemSO)
+    {
+        GameObject obj = Instantiate(itemSO.prefab, hitInfo.point, Quaternion.identity);
+        obj.transform.LookAt(hitInfo.point + hitInfo.normal);
+        obj.GetComponent<Rigidbody>().useGravity = false;
+        obj.GetComponent<Rigidbody>().freezeRotation = true;
+        obj.GetComponent<Rigidbody>().isKinematic = false;
+
+        Destroy(hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem);
+    }
+
+    private void DisplayInputPrompt(string text)
+    {
+        interactPrompt.SetActive(true);
+        promptText.text = text;
     }
 
     private void CheckForHotbarInput()
