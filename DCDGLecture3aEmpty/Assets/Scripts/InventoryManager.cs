@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject[] hotbarSlots = new GameObject[3];
     [SerializeField] GameObject inventoryParent;
     [SerializeField] GameObject itemPrefab;
+    [SerializeField] private float throwForce;
     [SerializeField] Camera cam;
 
     int selectedHotbarSlot = 0;
@@ -53,13 +54,13 @@ public class InventoryManager : MonoBehaviour
 
     private void DropHotbarItem(int slotIndex)
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Vector3 position = ray.GetPoint(3);
-
         ItemSO itemSO = hotbarSlots[slotIndex].GetComponent<InventorySlot>().heldItem.GetComponent<InventoryItem>().itemScriptableObject;
-        Debug.Log(itemSO);
-        GameObject droppedItem = Instantiate(itemSO.prefab, position, new Quaternion());
+        GameObject droppedItem = Instantiate(itemSO.prefab, cam.transform.Find("DropPoint").position, new Quaternion());
         droppedItem.GetComponent<itemPickable>().itemScriptableObject = itemSO;
+
+        Vector3 throwDirection = cam.transform.forward + new Vector3(0,0.2f, 0);
+
+        droppedItem.GetComponent<Rigidbody>().AddForce(throwDirection * throwForce, ForceMode.Impulse);
 
         Destroy(hotbarSlots[slotIndex].GetComponent<InventorySlot>().heldItem);
     }

@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Linn-startmenu.unity
+    guid: 71bdea15071884331b8f3da4ddbc6f1e
+  - enabled: 1
+    path: Assets/Scenes/grandpaIntroLetter.unity
+    guid: f92ef3fc145f64db8839c6ac0890f0e0
   m_configObjects: {}
