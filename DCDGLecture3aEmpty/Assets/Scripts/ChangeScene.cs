@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour{
- public void MoveToSceneGrandpaLetter(){
+ public void MoveToSceneGrandpaLetter(int sceneID){
     Debug.Log("method called");
-    SceneManager.LoadScene("grandpaIntroLetter");
+    SceneManager.LoadScene(sceneID);
  }
 
 }
