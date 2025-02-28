@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/grandpaIntroLetter.unity
     guid: f92ef3fc145f64db8839c6ac0890f0e0
+  - enabled: 1
+    path: Assets/Scenes/Playtesting.unity
+    guid: d2971fe304ba46149a8d60f61eeb77be
   m_configObjects: {}
