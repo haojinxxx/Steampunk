@@ -11,19 +11,17 @@ public class ValveScript : MonoBehaviour
     [SerializeField] private Transform playerCameraTransform; 
     public bool activeValve = false;
 
-    private Bool animationActive;
 
     // Start is called before the first frame update
     void Start()
     {
         valveAnimator.SetBool("ActiveValve", activeValve);
-        animationActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {      
-        if (!animationActive && Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, reach, valveLayerMask))
+        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, reach, valveLayerMask))
         {
             if(Input.GetKeyDown(KeyCode.E)) {
                 valveAnimator.SetTrigger("Crank");
