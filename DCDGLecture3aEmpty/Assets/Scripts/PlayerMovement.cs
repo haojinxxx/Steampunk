@@ -130,7 +130,8 @@ public class PlayerMovement : MonoBehaviour
 
             runSpeed = crouchSpeed;
 
-            if (!raiseFromCrouch) {
+            if (!raiseFromCrouch)
+            {
                 raiseFromCrouch = true;
             }
 
@@ -139,11 +140,14 @@ public class PlayerMovement : MonoBehaviour
         else
 
         {
-            if(raiseFromCrouch) {
-                if(characterController.height < defaultHeight) {
+            if (raiseFromCrouch)
+            {
+                if (characterController.height < defaultHeight)
+                {
                     characterController.height += cameraRaiseSpeed;
                 }
-                if (characterController.height >= defaultHeight) {
+                if (characterController.height >= defaultHeight)
+                {
                     raiseFromCrouch = false;
                     characterController.height = defaultHeight;
                 }
