@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField] Transform camTransform;
     [SerializeField] GameObject[] hotbarSlots = new GameObject[3];
     [SerializeField] GameObject inventoryParent;
     [SerializeField] GameObject itemPrefab;
@@ -25,10 +26,9 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(ray, out hitInfo, 2) && hitInfo.collider.gameObject.GetComponent<itemPickable>() != null)
+        if (Physics.Raycast(camTransform.position, camTransform.forward, out hitInfo, 2) && hitInfo.collider.gameObject.GetComponent<itemPickable>() != null)
         {
             itemPickable item = hitInfo.collider.gameObject.GetComponent<itemPickable>();
             DisplayInputPrompt("Press [E] to Pick Up");
@@ -78,7 +78,22 @@ public class InventoryManager : MonoBehaviour
 
     private void CheckForHotbarInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            if (selectedHotbarSlot < 2) {
+                selectedHotbarSlot += 1;            
+            }
+            HotbarItemChanged();
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            if (selectedHotbarSlot > 0)
+            {
+                selectedHotbarSlot -= 1;
+            }
+            HotbarItemChanged();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedHotbarSlot = 0;
             HotbarItemChanged();
