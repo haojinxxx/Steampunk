@@ -21,11 +21,13 @@ public class PlayerPickUpDrop : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("Left click");
             if (objectGrabbable == null)
             {
-                float pickUpDistance = 2f;
+                float pickUpDistance = 3f;
                 if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
                 {
+                    Debug.Log("Item pressed");
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {
                         objectGrabbable.Grab(objectGrabPointTransform);
