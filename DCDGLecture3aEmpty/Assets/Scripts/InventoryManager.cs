@@ -52,10 +52,17 @@ public class InventoryManager : MonoBehaviour
 
     private void CheckForPlaceInput(RaycastHit hitInfo)
     {
-        DisplayInputPrompt("Press [E] to Place Item");
-        if (Input.GetKeyDown(KeyCode.E) && hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem != null)
+        if (hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem != null)
         {
-            PlaceItem(hitInfo, hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem.GetComponent<InventoryItem>().itemScriptableObject);
+            DisplayInputPrompt("Press [E] to Place Item");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PlaceItem(hitInfo, hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem.GetComponent<InventoryItem>().itemScriptableObject);
+            }
+        }
+        else
+        {
+            interactPrompt.SetActive(false);
         }
     }
 
