@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c152bc132dfae3b46889ff302acc662a, type: 3}
   m_Name: ClockGear
   m_EditorClassIdentifier: 
-  name: 
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
-  stackMax: 0
+  name: Gear
+  icon: {fileID: 21300000, guid: 2e7ac424d2d6fd9409c61113863dac08, type: 3}
+  prefab: {fileID: 8079005728240581628, guid: 3c8f646855f31d148ab719c654bad372, type: 3}
+  stackMax: 1
