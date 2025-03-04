@@ -441,13 +441,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092240486945263177}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0154007645, y: 0.0671208, z: 0.0068323496}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.33740214, y: -0.6214176, z: -0.33740214, w: 0.6214176}
+  m_LocalPosition: {x: -0.322, y: 0.247, z: -0.003}
+  m_LocalScale: {x: 15.694093, y: 15.694093, z: 15.694093}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6189845867406473354}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2008968453006793117}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -57}
 --- !u!33 &3447505340168490690
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -498,6 +498,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1376366307260751558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2008968453006793117}
+  m_Layer: 0
+  m_Name: HourHandParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2008968453006793117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376366307260751558}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.61237246, y: 0.35355335, z: -0.61237246, w: 0.35355335}
+  m_LocalPosition: {x: 0.00024, y: 0.05815, z: -0.01371}
+  m_LocalScale: {x: 0.06371823, y: 0.063718244, z: 0.06371823}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 109559982033839020}
+  m_Father: {fileID: 6189845867406473354}
+  m_LocalEulerAnglesHint: {x: 120, y: 90, z: 0}
 --- !u!1 &2249906714135200879
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1028,69 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3952209732678312683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7893163275781757753}
+  m_Layer: 0
+  m_Name: cameraPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7893163275781757753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3952209732678312683}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0056, y: 0.056, z: 0.1553}
+  m_LocalScale: {x: 0.06371823, y: 0.063718244, z: 0.06371823}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6189845867406473354}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4833748906057363165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5589105369643169121}
+  m_Layer: 0
+  m_Name: MinuteHandParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5589105369643169121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833748906057363165}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.00011, y: 0.05723, z: -0.0137}
+  m_LocalScale: {x: 0.06371823, y: 0.063718244, z: 0.06371823}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7155915804551227721}
+  m_Father: {fileID: 6189845867406473354}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &5245945500816356666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,13 +1117,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5245945500816356666}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.017660765, y: 0.069142416, z: 0.0059006047}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.34152272, y: -0.61916256, z: 0.34152272, w: 0.61916256}
+  m_LocalPosition: {x: -0.30760428, y: 0.3215721, z: -0.0028247687}
+  m_LocalScale: {x: 15.694092, y: 15.694094, z: 15.694093}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6189845867406473354}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 5589105369643169121}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 57.761}
 --- !u!33 &1687674667001645392
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1421,6 +1516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6189845867406473354}
   - component: {fileID: 7881016774674579303}
+  - component: {fileID: 650537554815336610}
   m_Layer: 9
   m_Name: Steampunk_Clock_fbx
   m_TagString: Untagged
@@ -1445,8 +1541,8 @@ Transform:
   - {fileID: 578227200690506663}
   - {fileID: 7218324593326001804}
   - {fileID: 1222536488410745534}
-  - {fileID: 7155915804551227721}
-  - {fileID: 109559982033839020}
+  - {fileID: 5589105369643169121}
+  - {fileID: 2008968453006793117}
   - {fileID: 7271256214388074170}
   - {fileID: 5157642267376924761}
   - {fileID: 4788619775340632726}
@@ -1462,6 +1558,7 @@ Transform:
   - {fileID: 6693348033660156772}
   - {fileID: 8431779344997555059}
   - {fileID: 3351370498228466199}
+  - {fileID: 7893163275781757753}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &7881016774674579303
@@ -1476,9 +1573,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09313c72a5eb8d49bf27f92f63753fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minuteHand: {fileID: 7155915804551227721}
-  hourHand: {fileID: 109559982033839020}
+  minuteHand: {fileID: 5589105369643169121}
+  hourHand: {fileID: 2008968453006793117}
   clockGear: {fileID: 4988667067096339506}
+  gearSO: {fileID: 11400000, guid: f16c89ea19f6f63468bd95abf27e832b, type: 2}
+  cam: {fileID: 0}
+  puzzleCamPosition: {fileID: 3952209732678312683}
+  interactPrompt: {fileID: 0}
+  promptText: {fileID: 0}
+  transitionSpeed: 2
+--- !u!65 &650537554815336610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6822127332726071856}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1091668, y: 0.110677116, z: 0.014633687}
+  m_Center: {x: 0.00023184491, y: 0.057389457, z: 0.00084040145}
 --- !u!1 &7071612809692047760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1920,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2086126992153494772, guid: 3c8f646855f31d148ab719c654bad372, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

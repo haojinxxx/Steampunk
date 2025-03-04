@@ -17,11 +17,14 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private float throwForce;
     [SerializeField] Camera cam;
 
+    private bool promptUsed;
+
     int selectedHotbarSlot = 0;
     void Start()
     {
         HotbarItemChanged();
         interactPrompt.SetActive(false);
+        promptUsed = false;
     }
 
     void Update()
@@ -43,7 +46,11 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            interactPrompt.SetActive(false);
+            if (promptUsed)
+            {
+                promptUsed = false;
+                interactPrompt.SetActive(false);
+            }
         }
 
         CheckForHotbarInput();
@@ -62,7 +69,11 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            interactPrompt.SetActive(false);
+            if (promptUsed)
+            {
+                promptUsed = false;
+                interactPrompt.SetActive(false);
+            }
         }
     }
 
@@ -79,6 +90,7 @@ public class InventoryManager : MonoBehaviour
 
     private void DisplayInputPrompt(string text)
     {
+        promptUsed = true;
         interactPrompt.SetActive(true);
         promptText.text = text;
     }
