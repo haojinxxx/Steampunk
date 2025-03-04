@@ -8304,7 +8304,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1382763128681512080}
-  - component: {fileID: 3409820972711066908}
   m_Layer: 0
   m_Name: door_1
   m_TagString: Untagged
@@ -8329,27 +8328,6 @@ Transform:
   - {fileID: 8802492931209026604}
   m_Father: {fileID: 356057631554363414}
   m_LocalEulerAnglesHint: {x: -0.179, y: -90, z: 0.074}
---- !u!95 &3409820972711066908
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238904325598271338}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 27cf2170ffd95924e9a9d852f4212159, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5261211017444295300
 GameObject:
   m_ObjectHideFlags: 0
