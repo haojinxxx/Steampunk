@@ -17,11 +17,14 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private float throwForce;
     [SerializeField] Camera cam;
 
+    private bool promptUsed;
+
     int selectedHotbarSlot = 0;
     void Start()
     {
         HotbarItemChanged();
         interactPrompt.SetActive(false);
+        promptUsed = false;
     }
 
     void Update()
@@ -43,7 +46,11 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            interactPrompt.SetActive(false);
+            if (promptUsed)
+            {
+                promptUsed = false;
+                interactPrompt.SetActive(false);
+            }
         }
 
         CheckForHotbarInput();
@@ -52,10 +59,21 @@ public class InventoryManager : MonoBehaviour
 
     private void CheckForPlaceInput(RaycastHit hitInfo)
     {
-        DisplayInputPrompt("Press [E] to Place Item");
-        if (Input.GetKeyDown(KeyCode.E) && hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem != null)
+        if (hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem != null)
         {
-            PlaceItem(hitInfo, hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem.GetComponent<InventoryItem>().itemScriptableObject);
+            DisplayInputPrompt("Press [E] to Place Item");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                PlaceItem(hitInfo, hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem.GetComponent<InventoryItem>().itemScriptableObject);
+            }
+        }
+        else
+        {
+            if (promptUsed)
+            {
+                promptUsed = false;
+                interactPrompt.SetActive(false);
+            }
         }
     }
 
@@ -72,6 +90,7 @@ public class InventoryManager : MonoBehaviour
 
     private void DisplayInputPrompt(string text)
     {
+        promptUsed = true;
         interactPrompt.SetActive(true);
         promptText.text = text;
     }
