@@ -6,7 +6,7 @@ public class doorScript : MonoBehaviour
 {
     Animator animator;
     public bool inside;
-    bool doorOpen = false;
+    private bool doorOpen = false;
 
 
     // Start is called before the first frame update
@@ -41,7 +41,6 @@ public class doorScript : MonoBehaviour
     {
         if (inside && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E key was pressed");
             doorOpen = !doorOpen;
         }
         if (doorOpen)
