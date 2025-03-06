@@ -19,12 +19,15 @@ public class paintingScript : MonoBehaviour
     [SerializeField] private Text promptText;
 
     private bool interactable;
+    private bool promptUsed;
 
     // Start is called before the first frame update
     void Start()
     {
+
         interactPrompt.SetActive(false);
         interactable = true;
+        promptUsed = false;
     }
 
     // Update is called once per frame
@@ -44,12 +47,17 @@ public class paintingScript : MonoBehaviour
             }
         }
         else {
-            interactPrompt.SetActive(false);
+            if (promptUsed)
+            {
+                interactPrompt.SetActive(false);
+                promptUsed = false;
+            }
         }
     }
 
     private void DisplayInputPrompt(string text)
     {
+        promptUsed = true;
         interactPrompt.SetActive(true);
         promptText.text = text;
     }
