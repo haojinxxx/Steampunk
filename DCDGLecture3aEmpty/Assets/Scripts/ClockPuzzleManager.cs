@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,30 +11,39 @@ public class ClockPuzzleManager : MonoBehaviour
     [SerializeField] GameObject clockGear;
     [SerializeField] ItemSO gearSO;
     [SerializeField] Camera cam;
-    [SerializeField] GameObject puzzleCamPosition;
+    [SerializeField] Camera puzzleCam;
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject PuzzleUI, MainUI;
     [SerializeField] private GameObject interactPrompt;
     [SerializeField] private Text promptText;
-    private int rotationAngle;
+    private int hourRotationAngle;
+    private int minuteRotationAngle;
     public float transitionSpeed = 2f;
 
-    private Vector3 originalPosition;
-    private Quaternion originalRotation;
+    private int clockHourSectors;
+    private int clockMinuteSectors;
 
     private bool promptUsed;
+
+    private bool isInteracting = false;
+    private bool puzzleActive = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rotationAngle = 120;
-        originalPosition = cam.transform.position;
-        originalRotation = cam.transform.rotation;
+        puzzleCam.enabled = false;
+        puzzleCam.gameObject.SetActive(false);
+        hourRotationAngle = 120;
+        minuteRotationAngle = -60;
+        clockHourSectors = 8; //start time
+        clockMinuteSectors = 2; //start time   
         promptUsed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitinfo, 3, LayerMask.GetMask("ClockPuzzle")))
+        if (!isInteracting && Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitinfo, 3, LayerMask.GetMask("ClockPuzzle")))
         {
             promptUsed = true;
             interactPrompt.SetActive(true);
@@ -41,18 +51,7 @@ public class ClockPuzzleManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                rotationAngle += 30;
-                hourHand.rotation = Quaternion.Euler(rotationAngle, 0, 0);
-                if (rotationAngle % 360 == 90)
-                {
-
-                    clockGear.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    clockGear.AddComponent<itemPickable>();
-                    clockGear.GetComponent<itemPickable>().itemScriptableObject = gearSO;
-                    clockGear.GetComponent<Rigidbody>().AddForce(clockGear.transform.forward * 150f);
-                    interactPrompt.SetActive(false);
-                    this.GetComponent<ClockPuzzleManager>().enabled = false;
-                }
+                enterPuzzleMode();
             }
         }
         else
@@ -63,6 +62,77 @@ public class ClockPuzzleManager : MonoBehaviour
                 interactPrompt.SetActive(false);
             }
         }
+
+        if (puzzleActive)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                minuteRotationAngle -= 30;
+                clockMinuteSectors += 1;
+                minuteHand.rotation = Quaternion.Euler(minuteRotationAngle, 0, 0);
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                hourRotationAngle -= 30;
+                clockHourSectors += 1;
+                hourHand.rotation = Quaternion.Euler(hourRotationAngle, 0, 0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                exitPuzzleMode();
+            }
+            
+            if (clockMinuteSectors % 12 == 0 && clockHourSectors % 12 == 9)
+            {
+
+                clockGear.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                clockGear.AddComponent<itemPickable>();
+                clockGear.GetComponent<itemPickable>().itemScriptableObject = gearSO;
+                clockGear.GetComponent<Rigidbody>().AddForce(clockGear.transform.forward * 150f);
+                interactPrompt.SetActive(false);
+
+                StartCoroutine(DelayedExit(1f));
+
+                this.GetComponent<ClockPuzzleManager>().enabled = false;
+            }
+        }
+    }
+
+    private void enterPuzzleMode()
+    {
+        isInteracting = true;
+
+        player.SetActive(false);
+        player.GetComponent<PlayerMovement>().enabled = false;
+
+        puzzleCam.enabled = true;
+        puzzleCam.gameObject.SetActive(true);
+
+        puzzleActive = true;
+
+        PuzzleUI.SetActive(true);
+        MainUI.SetActive(false);
+
+    }
+    private void exitPuzzleMode()
+    {
+        isInteracting = false;
+        puzzleActive = false;
+
+        puzzleCam.enabled = false;
+        puzzleCam.gameObject.SetActive(false);
+
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.SetActive(true);
+
+        PuzzleUI.SetActive(false);
+        MainUI.SetActive(true);
+    }
+
+    IEnumerator DelayedExit(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        exitPuzzleMode();
     }
 }
     
