@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 3064021220130963641}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6454,7 +6454,7 @@ GameObject:
   - component: {fileID: 2753457815540674213}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6594,7 +6594,7 @@ GameObject:
   - component: {fileID: 694428486293644482}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10057,8 +10057,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7021065, y: 3.0000014, z: 2.6741285}
-  m_Center: {x: -2.1489468, y: 1.5000007, z: -8.1912}
+  m_Size: {x: 1.4920945, y: 3.0000014, z: 2.6741295}
+  m_Center: {x: -2.2539551, y: 1.5000007, z: -8.1912}
 --- !u!65 &414195870338489203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11781,7 +11781,6 @@ GameObject:
   - component: {fileID: 2594724105532282502}
   - component: {fileID: 6201609491611503735}
   - component: {fileID: 8767300270150698722}
-  - component: {fileID: 6505750034218745017}
   m_Layer: 0
   m_Name: LightSwitch
   m_TagString: Untagged
@@ -11895,7 +11894,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.008
+  m_Radius: 0.004
   m_Center: {x: -0.0000065417416, y: -0.0001238629, z: -0.000015785165}
 --- !u!114 &6201609491611503735
 MonoBehaviour:
@@ -11909,6 +11908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb151392d3f9864db4e15ab59222ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInRange: 0
+  lightObj: {fileID: 0}
 --- !u!82 &8767300270150698722
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12005,27 +12006,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &6505750034218745017
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4527713356707627776}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8eb1dcfad2be1244cb46c8c66dbc7a92, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4541762681379775689
 GameObject:
   m_ObjectHideFlags: 0
@@ -14972,7 +14952,7 @@ GameObject:
   - component: {fileID: 8813718741201053088}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15647,7 +15627,7 @@ GameObject:
   - component: {fileID: 3988731754851285956}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17492,7 +17472,7 @@ GameObject:
   - component: {fileID: 6452387208111120290}
   m_Layer: 0
   m_Name: Point Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28617,20 +28597,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: c11db235e38477e47868f60958edf0fb, type: 2}
     - target: {fileID: 7323340331225464447, guid: 6cb573aa843f1b143ac82cd2efa890b9, type: 3}
+      propertyPath: m_Size.y
+      value: 81.00809
+      objectReference: {fileID: 0}
+    - target: {fileID: 7323340331225464447, guid: 6cb573aa843f1b143ac82cd2efa890b9, type: 3}
       propertyPath: m_Size.z
-      value: 4.842305
+      value: 0.9143191
       objectReference: {fileID: 0}
     - target: {fileID: 7323340331225464447, guid: 6cb573aa843f1b143ac82cd2efa890b9, type: 3}
       propertyPath: m_Center.x
-      value: 0.018500166
+      value: 0.018500177
       objectReference: {fileID: 0}
     - target: {fileID: 7323340331225464447, guid: 6cb573aa843f1b143ac82cd2efa890b9, type: 3}
       propertyPath: m_Center.y
-      value: 42.626156
+      value: 42.62615
       objectReference: {fileID: 0}
     - target: {fileID: 7323340331225464447, guid: 6cb573aa843f1b143ac82cd2efa890b9, type: 3}
       propertyPath: m_Center.z
-      value: 0.39225262
+      value: -1.5717411
       objectReference: {fileID: 0}
     - target: {fileID: 7790577535925963789, guid: 6cb573aa843f1b143ac82cd2efa890b9, type: 3}
       propertyPath: m_Materials.Array.data[0]

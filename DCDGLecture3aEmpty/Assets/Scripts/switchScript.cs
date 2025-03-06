@@ -7,6 +7,7 @@ public class switchScript : MonoBehaviour
     private bool playerInRange = false;
     public GameObject lightObj;
     private bool lightOn = true;
+   
     // Start is called before the first frame update
     void Start()
     {
