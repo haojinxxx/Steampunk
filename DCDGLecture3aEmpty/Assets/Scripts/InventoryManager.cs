@@ -82,7 +82,7 @@ public class InventoryManager : MonoBehaviour
         GameObject obj = Instantiate(itemSO.prefab, hitInfo.point, Quaternion.identity);
         obj.transform.LookAt(hitInfo.point + hitInfo.normal);
         obj.GetComponent<Rigidbody>().useGravity = false;
-        obj.GetComponent<Rigidbody>().freezeRotation = true;
+        obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         obj.GetComponent<Rigidbody>().isKinematic = false;
 
         Destroy(hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem);

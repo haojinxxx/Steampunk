@@ -127,6 +127,8 @@ MonoBehaviour:
   paintingAnimator: {fileID: 8621387090455814821}
   SandClockAnimator1: {fileID: 0}
   SandClockAnimator2: {fileID: 0}
+  SandClockBase: {fileID: 0}
+  newBaseTexture: {fileID: 2800000, guid: dd6b62339c9590b4a885d62c3e151bff, type: 3}
   interactPrompt: {fileID: 0}
   promptText: {fileID: 0}
 --- !u!95 &8621387090455814821
