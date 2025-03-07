@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class valvePuzzleScript : MonoBehaviour
 {
+    [SerializeField] private float reach;
+    [SerializeField] private LayerMask valveLayerMask;
+    [SerializeField] private Transform playerCameraTransform; 
+
 
     [Header("Valves")]
     [SerializeField] private ValveScript[] valves;
 
     public bool puzzleComplete;
+
+    private ValveScript script;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +25,15 @@ public class valvePuzzleScript : MonoBehaviour
     void Update()
     {
         if(!puzzleComplete) {
+            if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, reach, valveLayerMask))
+            {
+                if(Input.GetKeyDown(KeyCode.E)) {
+                    raycastHit.transform.TryGetComponent<ValveScript>(out script);
+                    script.crankValve();
+                }
+            }
+
+
             bool valve0 = valves[0].activeValve;
             bool valve1 = valves[1].activeValve;
             bool valve2 = valves[2].activeValve;
