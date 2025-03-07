@@ -10,6 +10,7 @@ public class ValveScript : MonoBehaviour
     [SerializeField] private LayerMask valveLayerMask;
     [SerializeField] private Transform playerCameraTransform; 
     public bool activeValve = false;
+    private ValveScript script;
 
 
     // Start is called before the first frame update
@@ -24,10 +25,15 @@ public class ValveScript : MonoBehaviour
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, reach, valveLayerMask))
         {
             if(Input.GetKeyDown(KeyCode.E)) {
-                valveAnimator.SetTrigger("Crank");
-                activeValve = !activeValve;
-                valveAnimator.SetBool("ActiveValve", activeValve);
+                raycastHit.transform.TryGetComponent<ValveScript>(out script);
+                script.crankValve();
             }
         }
+    }
+
+    public void crankValve() {
+valveAnimator.SetTrigger("Crank");
+                activeValve = !activeValve;
+                valveAnimator.SetBool("ActiveValve", activeValve);
     }
 }
