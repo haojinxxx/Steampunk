@@ -43,7 +43,7 @@ public class ClockPuzzleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isInteracting && Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitinfo, 3, LayerMask.GetMask("ClockPuzzle")))
+        if (!isInteracting && Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hitinfo, 2, LayerMask.GetMask("ClockPuzzle")))
         {
             promptUsed = true;
             interactPrompt.SetActive(true);

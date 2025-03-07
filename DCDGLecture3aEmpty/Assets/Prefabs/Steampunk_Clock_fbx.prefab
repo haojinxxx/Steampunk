@@ -2097,6 +2097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClockPuzzleUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7931569036768391125, guid: 54b40286a45c7cd478599e66aad80974, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

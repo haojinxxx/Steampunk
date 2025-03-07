@@ -5,8 +5,12 @@ using UnityEngine;
 public class doorScript : MonoBehaviour
 {
     Animator animator;
-    public bool inside;
+    [SerializeField] InventoryManager inventoryManager;
+    [SerializeField] Transform camTransform;
+    private bool inside;
     private bool doorOpen = false;
+    private bool gearPlaced = false;
+    private bool doorUnlocked = false;
 
 
     // Start is called before the first frame update
@@ -39,17 +43,45 @@ public class doorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inside && Input.GetKeyDown(KeyCode.E))
+
+        if (inside)
         {
-            doorOpen = !doorOpen;
-        }
-        if (doorOpen)
-        {
-            animator.SetBool("open", true);
-        }
-        else
-        {
-            animator.SetBool("open", false);
+            RaycastHit hitinfo;
+            if (Physics.Raycast(camTransform.position, camTransform.forward, out hitinfo, 2) && hitinfo.collider.CompareTag("Door"))
+            {
+                if (!doorUnlocked)
+                {
+                    InventorySlot slot = inventoryManager.getCurrentSlot();
+                    if (slot.heldItem != null && slot.heldItem.GetComponent<InventoryItem>().itemScriptableObject.prefab.tag == "Key")
+                    {
+                        if (gearPlaced && Input.GetKeyDown(KeyCode.E))
+                        {
+                            doorUnlocked = true;
+                        }
+                        else if (!gearPlaced && Input.GetKeyDown(KeyCode.E))
+                        {
+                            Debug.Log("Gear has not been placed");
+                        }
+                    }
+                    else if (slot.heldItem != null && slot.heldItem.GetComponent<InventoryItem>().itemScriptableObject.prefab.tag == "DoorGear")
+                    {
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            Destroy(slot.heldItem);
+                            gearPlaced = true;
+                        }
+                    }
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        doorOpen = !doorOpen;
+                        animator.SetBool("open", doorOpen);
+                    }
+                }
+
+            }
         }
     }
 }
