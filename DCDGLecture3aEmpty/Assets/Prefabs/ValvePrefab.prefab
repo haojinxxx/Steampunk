@@ -53,6 +53,8 @@ MonoBehaviour:
     m_Bits: 64
   playerCameraTransform: {fileID: 0}
   activeValve: 0
+  red: {fileID: 2100000, guid: 0f77e7dd85bd3ee48b42ad2732ab8fd0, type: 2}
+  green: {fileID: 2100000, guid: 33551b69c1f3792468bb433e87b750a3, type: 2}
 --- !u!65 &7077061995151206499
 BoxCollider:
   m_ObjectHideFlags: 0
