@@ -70,6 +70,11 @@ public class InventoryManager : MonoBehaviour
 
     }
 
+    public InventorySlot getCurrentSlot()
+    {
+        return hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>();
+    }
+
     private void CheckForPlaceInput(RaycastHit hitInfo)
     {
         if (hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem != null)

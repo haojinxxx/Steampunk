@@ -17,6 +17,8 @@ public class paintingScript : MonoBehaviour
 
     [SerializeField] private GameObject SandClockBase;
     [SerializeField] private Texture2D newBaseTexture;
+
+    [SerializeField] private GameObject key;
     
     [SerializeField] private GameObject interactPrompt;
     [SerializeField] private Text promptText;
@@ -47,6 +49,8 @@ public class paintingScript : MonoBehaviour
                 SandClockAnimator2.SetTrigger("StopAnimation");
 
                 SandClockBase.GetComponent<Renderer>().material.mainTexture = newBaseTexture;
+
+                key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                 interactable = false;
             }
