@@ -19,8 +19,6 @@ public class PlayerPickUpDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(playerCameraTransform.position, playerCameraTransform.forward, Color.red);
-
         if (Input.GetMouseButtonDown(0))
         {
             if (objectGrabbable == null)

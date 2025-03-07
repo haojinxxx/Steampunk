@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEditor.SceneManagement;
 using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Text promptText;
     [SerializeField] private float throwForce;
     [SerializeField] Camera cam;
+    [SerializeField] private Light flashlight;
 
     private bool promptUsed;
 
@@ -25,6 +27,7 @@ public class InventoryManager : MonoBehaviour
         HotbarItemChanged();
         interactPrompt.SetActive(false);
         promptUsed = false;
+        flashlight.enabled = false;
     }
 
     void Update()
@@ -51,6 +54,16 @@ public class InventoryManager : MonoBehaviour
                 promptUsed = false;
                 interactPrompt.SetActive(false);
             }
+        }
+
+        GameObject slotItem = hotbarSlots[selectedHotbarSlot].GetComponent<InventorySlot>().heldItem;
+        if (slotItem != null && slotItem.GetComponent<InventoryItem>().itemScriptableObject.prefab.layer == 11)
+        {
+            flashlight.enabled = true;
+        }
+        else
+        {
+            flashlight.enabled = false;
         }
 
         CheckForHotbarInput();
