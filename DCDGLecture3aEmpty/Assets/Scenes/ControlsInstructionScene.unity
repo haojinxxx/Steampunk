@@ -538,10 +538,10 @@ RectTransform:
   - {fileID: 1340941141}
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -87}
-  m_SizeDelta: {x: -1783.3931, y: 117.083}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 23, y: -584}
+  m_SizeDelta: {x: 136.60693, y: 117.08301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402615301
 MonoBehaviour:
@@ -764,10 +764,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -535, y: -146}
-  m_SizeDelta: {x: -1364.379, y: 113.938}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -535, y: -632}
+  m_SizeDelta: {x: 555.621, y: 113.93799}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555440477
 MonoBehaviour:
@@ -978,10 +978,10 @@ RectTransform:
   - {fileID: 1828017096}
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210, y: 49}
-  m_SizeDelta: {x: 107.19, y: 94.274}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -199, y: -431}
+  m_SizeDelta: {x: 107.19, y: 94.27399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598645324
 MonoBehaviour:
@@ -1053,10 +1053,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -533, y: -388}
-  m_SizeDelta: {x: -1364.379, y: 133.97998}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -538, y: -872}
+  m_SizeDelta: {x: 555.621, y: 133.97998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610073115
 MonoBehaviour:
@@ -1263,10 +1263,10 @@ RectTransform:
   - {fileID: 634728300}
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: 59}
-  m_SizeDelta: {x: -1783.3931, y: 117.083}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 26, y: -425}
+  m_SizeDelta: {x: 136.60693, y: 117.08301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677315659
 MonoBehaviour:
@@ -1880,10 +1880,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 436, y: 26}
-  m_SizeDelta: {x: 555.621, y: 133.98}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 425, y: -460}
+  m_SizeDelta: {x: 555.621, y: 133.97998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1181254800
 MonoBehaviour:
@@ -1905,8 +1905,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press E to pick up items and drop items from your inventory, to activate
-    hints
+  m_text: Press E to pick up and drop items from your inventory and to activate hints
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2015,9 +2014,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -519, y: -258}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -519, y: -736}
   m_SizeDelta: {x: 791.778, y: 126.862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252537114
@@ -2222,7 +2221,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2649,10 +2648,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 430, y: -274}
-  m_SizeDelta: {x: 555.621, y: 133.98}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 425, y: -787}
+  m_SizeDelta: {x: 555.621, y: 133.97998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643185702
 MonoBehaviour:
@@ -2933,10 +2932,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 434, y: -127}
-  m_SizeDelta: {x: 555.621, y: 133.98}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 429, y: -640}
+  m_SizeDelta: {x: 555.621, y: 133.97998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1703186963
 MonoBehaviour:
@@ -3441,9 +3440,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2112816561}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: -234}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 20, y: -755}
   m_SizeDelta: {x: 155.776, y: 151.612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071895718
