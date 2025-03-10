@@ -15,6 +15,7 @@ public class paintingScript : MonoBehaviour
     [SerializeField] private Animator SandClockAnimator1;
     [SerializeField] private Animator SandClockAnimator2;
 
+    [SerializeField] private GameObject SandClock;
     [SerializeField] private GameObject SandClockBase;
     [SerializeField] private Texture2D newBaseTexture;
 
@@ -25,6 +26,7 @@ public class paintingScript : MonoBehaviour
 
     private bool interactable;
     private bool promptUsed;
+    public bool puzzleComplete = false;
 
     // Start is called before the first frame update
     void Start()
@@ -47,12 +49,14 @@ public class paintingScript : MonoBehaviour
 
                 SandClockAnimator1.SetTrigger("StopAnimation");
                 SandClockAnimator2.SetTrigger("StopAnimation");
+                SandClock.GetComponent<AudioSource>().enabled = false;
 
                 SandClockBase.GetComponent<Renderer>().material.mainTexture = newBaseTexture;
 
                 key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                 interactable = false;
+                puzzleComplete = true;
             }
         }
         else {

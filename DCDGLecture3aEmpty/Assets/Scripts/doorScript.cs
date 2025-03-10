@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class doorScript : MonoBehaviour
 {
     Animator animator;
     [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Transform camTransform;
+    [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private Text promptText;
     private bool inside;
     private bool doorOpen = false;
     private bool gearPlaced = false;
-    private bool doorUnlocked = false;
+    public bool doorUnlocked = false;
 
 
     // Start is called before the first frame update
@@ -56,11 +59,15 @@ public class doorScript : MonoBehaviour
                     {
                         if (gearPlaced && Input.GetKeyDown(KeyCode.E))
                         {
+                            GetComponent<AudioSource>().Play();
                             doorUnlocked = true;
                         }
                         else if (!gearPlaced && Input.GetKeyDown(KeyCode.E))
                         {
-                            Debug.Log("Gear has not been placed");
+                            interactPrompt.SetActive(true);
+                            promptText.text = "The unlocking mechanism seems to be missing a gear";
+
+                            StartCoroutine(DelayedPromptRemove(3f));
                         }
                     }
                     else if (slot.heldItem != null && slot.heldItem.GetComponent<InventoryItem>().itemScriptableObject.prefab.tag == "DoorGear")
@@ -68,6 +75,10 @@ public class doorScript : MonoBehaviour
                         if (Input.GetKeyDown(KeyCode.E))
                         {
                             Destroy(slot.heldItem);
+                            interactPrompt.SetActive(true);
+                            promptText.text = "Gear has been placed";
+
+                            StartCoroutine(DelayedPromptRemove(2f));
                             gearPlaced = true;
                         }
                     }
@@ -83,5 +94,16 @@ public class doorScript : MonoBehaviour
 
             }
         }
+    }
+
+    IEnumerator DelayedPromptRemove(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        disableHintPrompt();
+    }
+
+    private void disableHintPrompt()
+    {
+        interactPrompt.SetActive(false);
     }
 }

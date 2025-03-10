@@ -280,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 1509693375}
     - target: {fileID: 1498591968619302796, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 1379
+      value: 1538
       objectReference: {fileID: 0}
     - target: {fileID: 1570890860400616458, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -316,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 1489410933}
     - target: {fileID: 2378956241131588437, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 1379
+      value: 1538
       objectReference: {fileID: 0}
     - target: {fileID: 2407283455936728854, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: cam
@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 1131987623}
     - target: {fileID: 3188920043899844072, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 2342
+      value: 2501
       objectReference: {fileID: 0}
     - target: {fileID: 3192139874547963007, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_Mesh
@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 938355570}
     - target: {fileID: 3850843919530003829, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 2921
+      value: 3080
       objectReference: {fileID: 0}
     - target: {fileID: 4009596986543060941, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_Name
@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 1691115393}
     - target: {fileID: 4203524073106001053, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 704
+      value: 863
       objectReference: {fileID: 0}
     - target: {fileID: 4444529946641028323, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_LocalScale.x
@@ -540,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 698657768}
     - target: {fileID: 5936236108040311644, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 1379
+      value: 1538
       objectReference: {fileID: 0}
     - target: {fileID: 6131662252052551733, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_Mesh
@@ -600,7 +600,7 @@ PrefabInstance:
       objectReference: {fileID: 1704351255}
     - target: {fileID: 7563342146972186461, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_VersionIndex
-      value: 13069
+      value: 13228
       objectReference: {fileID: 0}
     - target: {fileID: 7701556069655578799, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_Mesh
@@ -626,6 +626,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: cc036adb5aa9dbd48ab24596f2164452, type: 3}
+    - target: {fileID: 8767300270150698722, guid: c0edad283fc98694c91f376c627586d9, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8984394832370143133, guid: c0edad283fc98694c91f376c627586d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.000118904085
@@ -807,7 +811,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 1680563081}
 --- !u!33 &399161903
 MeshFilter:
   m_ObjectHideFlags: 10
