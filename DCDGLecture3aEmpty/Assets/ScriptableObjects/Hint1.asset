@@ -13,3 +13,11 @@ MonoBehaviour:
   m_Name: Hint1
   m_EditorClassIdentifier: 
   hintAudioClip: {fileID: 8300000, guid: 20f3e9e5bc3b3364c8fe300b3ffd861a, type: 3}
+  hintText: "17 november 1902  If you\u2019re reading this, then I suppose my preparations
+    weren\u2019t entirely in vain. Hello, my boy!  You know, back in my day, I think
+    I was about your age? Seven years old or something like that? Anyway, back then,
+    I was punished for failing to prove the Riemann Hypothesis. Quite the unreasonable
+    expectation for a child, don\u2019t you think? My punishment? Staring at the
+    old clock. Minutes, sometimes hours. But here\u2019s the funny thing. I kept
+    staring, and eventually, I realized something. That old clock held the solution
+    to a few other problems I had. Perhaps it might do the same for you."

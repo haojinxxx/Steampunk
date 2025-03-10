@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Hint3
   m_EditorClassIdentifier: 
   hintAudioClip: {fileID: 8300000, guid: 8c19abc5a51973444b12694d10a97584, type: 3}
+  hintText: "July 4th Hello, my boy! I imagine you were quite shocked at how tidy
+    and intact the room looked when you arrived\u2014especially considering it fell
+    out of the sky. But don\u2019t let that fool you. You should take a look at the
+    frames on the walls, make sure they\u2019re properly aligned. Sometimes, things
+    aren\u2019t as steady as they seem. "

@@ -34,10 +34,10 @@ public class ClockPuzzleManager : MonoBehaviour
     {
         puzzleCam.enabled = false;
         puzzleCam.gameObject.SetActive(false);
-        hourRotationAngle = 120;
-        minuteRotationAngle = -60;
-        clockHourSectors = 8; //start time
-        clockMinuteSectors = 2; //start time   
+        hourRotationAngle = -60;
+        minuteRotationAngle = 0;
+        clockHourSectors = 2; //start time
+        clockMinuteSectors = 0; //start time   
         promptUsed = false;
     }
 
@@ -83,7 +83,7 @@ public class ClockPuzzleManager : MonoBehaviour
                 exitPuzzleMode();
             }
             
-            if (clockMinuteSectors % 12 == 0 && clockHourSectors % 12 == 9)
+            if (clockMinuteSectors % 12 == 11 && clockHourSectors % 12 == 8)
             {
 
                 clockGear.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;

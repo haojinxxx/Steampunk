@@ -7,4 +7,5 @@ using UnityEngine;
 public class hintAudio : ScriptableObject
 {
    public AudioClip hintAudioClip;
+    public string hintText;
 }

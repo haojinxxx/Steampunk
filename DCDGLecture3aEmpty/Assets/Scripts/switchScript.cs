@@ -8,6 +8,7 @@ public class switchScript : MonoBehaviour
     [SerializeField] InventoryManager inventoryManager;
     [SerializeField] Transform camTransform;
     [SerializeField] GameObject lightObj;
+    [SerializeField] LayerMask layerMask;
     private bool playerInRange = false;
     private bool lightOn = true;
 
@@ -26,8 +27,9 @@ public class switchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit raycastHit, reach) && raycastHit.collider.CompareTag("switch"))
+        if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit raycastHit, reach, layerMask))
         {
+            Debug.Log("HITITIT");
             DisplayInputPrompt("Press [E] to Interact");
             if(Input.GetKeyDown(KeyCode.E)) {
                 flickSwitch();             

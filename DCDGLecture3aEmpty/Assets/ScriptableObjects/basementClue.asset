@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: basementClue
   m_EditorClassIdentifier: 
   hintAudioClip: {fileID: 8300000, guid: 48d3cbacf92dc8b408b25645b5e62a07, type: 3}
+  hintText: "July 12th Heh, this takes me back to when I was about your age. The
+    base-10 number system hadn\u2019t been invented yet, or at least, my parents
+    never taught it to me. Can\u2019t quite remember. ANYWAY! Back then, we had to
+    count in binary. You youngsters have it easy nowadays with your fancy new numeric
+    systems. "

@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: goToBasement
   m_EditorClassIdentifier: 
   hintAudioClip: {fileID: 8300000, guid: fbaebcdc691ca4940894a029d702cbbe, type: 3}
+  hintText: You should probably get into the basement before you try to find any
+    more clues from here.

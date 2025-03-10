@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Hint4
   m_EditorClassIdentifier: 
   hintAudioClip: {fileID: 8300000, guid: 3c91eaf41b7824a4aaaa040b32a2e628, type: 3}
+  hintText: "August 22nd Hmmm... This one\u2019s tricky. Ah, sorry\u2014I got distracted
+    trying to figure out how to un-split an atom using Filo\u2019s fur. No luck so
+    far. Now, what was I supposed to do again? RIGHT! A clue! Uuhm... The number
+    on the hourglass probably has something to do with the valves in the basement.
+    Might be worth taking a closer look."

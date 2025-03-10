@@ -23,6 +23,7 @@ public class radioScript : MonoBehaviour
     [SerializeField] private ClockPuzzleManager clockPuzzle;
     [SerializeField] private paintingScript paintingScript;
     [SerializeField] private doorScript doorScript;
+    [SerializeField] private Journal journalScript;
     
 
     private AudioSource radioAudioSource;
@@ -84,6 +85,7 @@ public class radioScript : MonoBehaviour
 
     public void PlayAudio() {
         radioAudioSource.Play();
+        journalScript.addHint(hints[hintIndex].hintText);
     }
 
     // Update is called once per frame
@@ -116,5 +118,6 @@ public class radioScript : MonoBehaviour
     {
         updateAudio(6);
         PlayAudio();
+        journalScript.addHint(hints[6].hintText);
     }
 }

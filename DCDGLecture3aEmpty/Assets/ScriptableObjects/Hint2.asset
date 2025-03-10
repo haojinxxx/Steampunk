@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Hint2
   m_EditorClassIdentifier: 
   hintAudioClip: {fileID: 8300000, guid: ba1ac84bb8be9c2448c55884c4a416ee, type: 3}
+  hintText: "June 12th Alright. Hello! Filo has been biting me constantly these days\u2014little
+    menace\u2014but that\u2019s not what I wanted to write about. One of my first
+    inventions... Ah, I remember it well. It was an hourglass that never stops spinning.
+    A curious little thing. If you manage to stop it, even for a moment, it will
+    give you half of an answer. Half, not whole, so use it wisely. Good luck! "
