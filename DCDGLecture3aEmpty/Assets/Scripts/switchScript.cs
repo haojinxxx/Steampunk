@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class switchScript : MonoBehaviour
 {
@@ -9,6 +10,14 @@ public class switchScript : MonoBehaviour
     [SerializeField] GameObject lightObj;
     private bool playerInRange = false;
     private bool lightOn = true;
+
+    private float reach = 2;
+
+    private bool promptUsed;
+
+    [Header("UI elements")]
+    [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private Text promptText;
     void Start()
     {
         
@@ -17,36 +26,34 @@ public class switchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hitinfo;
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(camTransform.position, camTransform.forward, out RaycastHit raycastHit, reach) && raycastHit.collider.CompareTag("switch"))
         {
-            gameObject.GetComponent<AudioSource>().Play();
-            lightOn = !lightOn;
+            DisplayInputPrompt("Press [E] to Interact");
+            if(Input.GetKeyDown(KeyCode.E)) {
+                flickSwitch();             
+            }
+        }
+        else {
+            if (promptUsed)
+            {
+                interactPrompt.SetActive(false);
+                promptUsed = false;
+            }
+        }
 
-        }
-        if (lightOn)
-        {
-            lightObj.SetActive(true);
-        }
-        else
-        {
-            lightObj.SetActive(false);
-        }
+    
     }
 
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.name == "Player")
-        {
-            playerInRange = true;
-        }
+    private void flickSwitch() {
+        gameObject.GetComponent<AudioSource>().Play();
+        lightOn = !lightOn;
+        lightObj.SetActive(lightOn);
     }
 
-    private void OnTriggerExit(Collider col)
+     private void DisplayInputPrompt(string text)
     {
-        if (col.name == "Player")
-        {
-            playerInRange = false;
-        }
+        promptUsed = true;
+        interactPrompt.SetActive(true);
+        promptText.text = text;
     }
 }
