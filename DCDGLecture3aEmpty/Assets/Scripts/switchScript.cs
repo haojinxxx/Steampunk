@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class switchScript : MonoBehaviour
 {
+    [SerializeField] InventoryManager inventoryManager;
+    [SerializeField] Transform camTransform;
+    [SerializeField] GameObject lightObj;
     private bool playerInRange = false;
-    public GameObject lightObj;
     private bool lightOn = true;
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -16,6 +17,7 @@ public class switchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hitinfo;
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             gameObject.GetComponent<AudioSource>().Play();
