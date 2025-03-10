@@ -9676,7 +9676,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 11965
+  m_VersionIndex: 11953
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11620,8 +11620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb151392d3f9864db4e15ab59222ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 0}
-  camTransform: {fileID: 0}
   lightObj: {fileID: 2662576905214117766}
 --- !u!82 &8767300270150698722
 AudioSource:
