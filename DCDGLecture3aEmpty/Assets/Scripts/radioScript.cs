@@ -41,7 +41,7 @@ public class radioScript : MonoBehaviour
 
     private void NextHint() {
         hintIndex++;
-        updateAdio(hintIndex);
+        updateAudio(hintIndex);
         PlayAudio();
         Debug.Log("In NextHint");
     }
@@ -68,7 +68,7 @@ public class radioScript : MonoBehaviour
         }
         else if(hintIndex == 3 && !doorScript.doorUnlocked) {
             Debug.Log("In third if");
-            updateAdio(5);
+            updateAudio(5);
             PlayAudio();
         }
         else if(hintIndex == 4) { // All hints played
@@ -77,7 +77,7 @@ public class radioScript : MonoBehaviour
         else {NextHint();}
     }
 
-    void updateAdio(int index) {
+    void updateAudio(int index) {
         Debug.Log("In updateAudio: " + index);
         radioAudioSource.clip = hints[index].hintAudioClip;
     }
@@ -110,5 +110,11 @@ public class radioScript : MonoBehaviour
         promptUsed = true;
         interactPrompt.SetActive(true);
         promptText.text = text;
+    }
+
+    public void playBasementClue()
+    {
+        updateAudio(6);
+        PlayAudio();
     }
 }
