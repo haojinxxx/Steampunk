@@ -178,9 +178,16 @@ MonoBehaviour:
   interactPrompt: {fileID: 0}
   promptText: {fileID: 0}
   hints:
+  - {fileID: 11400000, guid: f465b26e806d27546ab6c4b608ff4497, type: 2}
   - {fileID: 11400000, guid: c1dfb76f3690ef24dbbfb0c72c9107a9, type: 2}
   - {fileID: 11400000, guid: 980c62aaa2d78c042a0b8d98b994c482, type: 2}
   - {fileID: 11400000, guid: 7598399df4209b24aadbae35919f733f, type: 2}
+  - {fileID: 11400000, guid: 556ebb6b491b85e4587e64a8450015a7, type: 2}
+  - {fileID: 11400000, guid: f2b20c5ae321e66428f44003cb01ccde, type: 2}
+  - {fileID: 11400000, guid: ec22b759352ccf34699e5e1e7a038cc2, type: 2}
+  clockPuzzle: {fileID: 0}
+  paintingScript: {fileID: 0}
+  doorScript: {fileID: 0}
 --- !u!82 &5683096919370581941
 AudioSource:
   m_ObjectHideFlags: 0
