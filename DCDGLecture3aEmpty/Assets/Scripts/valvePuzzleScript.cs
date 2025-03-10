@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class valvePuzzleScript : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class valvePuzzleScript : MonoBehaviour
                 foreach (ValveScript vs in valves) {
                     vs.enabled = false;
                 }
+
+                SceneManager.LoadScene(5);
             }
         }
     }
