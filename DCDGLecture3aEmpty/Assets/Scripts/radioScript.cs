@@ -19,7 +19,10 @@ public class radioScript : MonoBehaviour
     private float reach;
     private bool promptUsed;
 
-
+    [Header("Puzzles to complete")]
+    [SerializeField] private ClockPuzzleManager clockPuzzle;
+    [SerializeField] private paintingScript paintingScript;
+    [SerializeField] private doorScript doorScript;
     
 
     private AudioSource radioAudioSource;
@@ -36,14 +39,47 @@ public class radioScript : MonoBehaviour
         promptUsed = false;
     }
 
-    public void NextHint() {
+    private void NextHint() {
         hintIndex++;
         updateAdio(hintIndex);
         PlayAudio();
+        Debug.Log("In NextHint");
+    }
+
+    
+    /// <summary>
+    /// Skips giving hints to puzzles that's already been completed
+    /// </summary>
+    public void TryNextHint() {
+        Debug.Log(hintIndex + ": tryNextHint");     
+        if(hintIndex == 0 && clockPuzzle.puzzleComplete) // Check if next hint is the clock puzzle
+        {
+            Debug.Log("In first if");
+            hintIndex++;
+
+            TryNextHint();
+            
+        }
+        else if((hintIndex == 1 || hintIndex == 2) && paintingScript.puzzleComplete) {
+            Debug.Log("In second if");
+            if(hintIndex == 1) {hintIndex++;}
+            hintIndex++;
+            TryNextHint();
+        }
+        else if(hintIndex == 3 && !doorScript.doorUnlocked) {
+            Debug.Log("In third if");
+            updateAdio(5);
+            PlayAudio();
+        }
+        else if(hintIndex == 4) { // All hints played
+            Debug.Log("In fourth if");
+        }
+        else {NextHint();}
     }
 
     void updateAdio(int index) {
-        radioAudioSource.clip = hints[hintIndex].hintAudioClip;
+        Debug.Log("In updateAudio: " + index);
+        radioAudioSource.clip = hints[index].hintAudioClip;
     }
 
     public void PlayAudio() {
@@ -57,7 +93,7 @@ public class radioScript : MonoBehaviour
         {
             DisplayInputPrompt("Press [E] to Interact");
             if(Input.GetKeyDown(KeyCode.E)) {
-                NextHint();                
+                TryNextHint();                
             }
         }
         else {

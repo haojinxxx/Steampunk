@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2d5bb43a8ad70488bc190da64effed, type: 3}
   m_Name: Hint2
   m_EditorClassIdentifier: 
-  hintAudioClip: {fileID: 0}
+  hintAudioClip: {fileID: 8300000, guid: ba1ac84bb8be9c2448c55884c4a416ee, type: 3}

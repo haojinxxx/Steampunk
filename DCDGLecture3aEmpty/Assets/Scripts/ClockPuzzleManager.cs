@@ -27,6 +27,7 @@ public class ClockPuzzleManager : MonoBehaviour
 
     private bool isInteracting = false;
     private bool puzzleActive = false;
+    public bool puzzleComplete = false;
 
     // Start is called before the first frame update
     void Start()
@@ -93,6 +94,7 @@ public class ClockPuzzleManager : MonoBehaviour
 
                 StartCoroutine(DelayedExit(1f));
 
+                puzzleComplete = true;
                 this.GetComponent<ClockPuzzleManager>().enabled = false;
             }
         }
