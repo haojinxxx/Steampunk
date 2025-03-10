@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class bookScript : MonoBehaviour
 {
@@ -15,11 +16,12 @@ public class bookScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit hitinfo;
         if (Physics.Raycast(camTransform.position, camTransform.forward, out hitinfo, 2) && hitinfo.collider.CompareTag("Book"))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene("notas");
+                SceneManager.LoadScene(notas);
             }
         }
     }
